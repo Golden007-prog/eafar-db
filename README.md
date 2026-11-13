@@ -1,3 +1,7 @@
+<div align="center">
+
+<img src="docs/banner.svg" alt="eafar-db banner" width="1000">
+
 # EAFAR-DB
 
 [![C++20](https://img.shields.io/badge/language-C%2B%2B20-blue)]()
@@ -7,6 +11,11 @@
 [![Version](https://img.shields.io/badge/version-v0.1.0-blue)]()
 [![Release](https://img.shields.io/github/v/release/kostyk348/eafar-db?sort=semver&color=blue)](https://github.com/kostyk348/eafar-db/releases)
 [![Last commit](https://img.shields.io/github/last-commit/kostyk348/eafar-db?branch=main)](https://github.com/kostyk348/eafar-db/commits/main)
+
+</div>
+
+---
+
 
 > **EAFAR-DB** — Database built on the **EAFAR** design principles *(Everything is a Field, Archive, Replay)*. Embedded, sparse, time-travelable.
 
