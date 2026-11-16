@@ -21,9 +21,12 @@ if(EXISTS "${EAFAR_SOURCE_DIR}/CMakeLists.txt")
   message(STATUS "eafardb: using local eafar core at ${EAFAR_SOURCE_DIR}")
   set(FETCHCONTENT_SOURCE_DIR_EAFAR "${EAFAR_SOURCE_DIR}")
 endif()
+# Пинуем последнюю C++-ревизию eafar: 012db9a (30.10.2026) удалил C++-реализацию
+# в пользу Rust-порта, поэтому `GIT_TAG main` оставляет этот проект без
+# include/eafar/*.hpp. Обновляя пин — проверь, что в eafar снова есть C++-заголовки.
 FetchContent_Declare(eafar
   GIT_REPOSITORY https://github.com/kostyk348/eafar.git
-  GIT_TAG main
+  GIT_TAG fc0e134d029f335c91ce6e855d37960d434ab7ab
 )
 set(EAFAR_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(EAFAR_BUILD_BENCH OFF CACHE BOOL "" FORCE)
