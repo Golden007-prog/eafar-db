@@ -88,7 +88,7 @@ TEST(ranged_scan_touches_only_pages_in_range) {
     // Scan a range covering only page 500: one page touched.
     const std::uint64_t before = t.touched_pages();
     std::vector<double> seen;
-    t.scan_range_f(0, p500, p500 + 1023, [&](int64_t k, double v) {
+    t.scan_range_f(0, p500, p500 + 1023, [&](int64_t /*k*/, double v) {
         seen.push_back(v);
     });
     CHECK_EQ(seen.size(), 1u);

@@ -21,7 +21,7 @@ namespace {
 
 // Bit-exact comparison via the journal contract: replay a copy and compare
 // column arrays per page.
-void require_same_values(const Table& a, const Table& b) {
+[[maybe_unused]] void require_same_values(const Table& a, const Table& b) {
     CHECK_EQ(a.column_count(), b.column_count());
     for (std::uint32_t c = 0; c < a.column_count(); ++c) {
         std::vector<int64_t> ka, kb;
