@@ -62,7 +62,8 @@ inline int run_all() {
     do {                                                                       \
         auto va = (a);                                                         \
         auto vb = (b);                                                         \
-        if (!(va == vb)) {                                                     \
+        using eq_type = std::common_type_t<decltype(va), decltype(vb)>;         \
+        if (!(static_cast<eq_type>(va) == static_cast<eq_type>(vb))) {          \
             throw std::runtime_error("CHECK_EQ failed: " #a " == " #b " at "   \
                                      __FILE__ ":" EAFARDB_STRINGIFY(__LINE__));\
         }                                                                      \
